@@ -99,6 +99,28 @@ Generate an image of a sunset over the ocean
 3. 创建密钥并复制
 4. 设置环境变量：`GITEE_TOKEN=xxx`
 
+## Security
+
+- 不要将 Token 硬编码到代码中
+- 不要将 Token 提交到 Git 仓库
+- 使用环境变量存储 Token
+- Docker 部署时通过 `environment` 注入：
+
+```yaml
+# docker-compose.yml 示例
+environment:
+  - HUGGING_FACE_TOKEN=${HUGGING_FACE_TOKEN}
+  - GITEE_TOKEN=${GITEE_TOKEN}
+```
+
+或使用 `.env` 文件（不要提交到仓库）：
+
+```bash
+# .env 文件
+HUGGING_FACE_TOKEN=hf_your_token_here
+GITEE_TOKEN=your_gitee_token
+```
+
 ## License
 
 MIT
