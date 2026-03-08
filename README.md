@@ -121,6 +121,10 @@ HUGGING_FACE_TOKEN=hf_your_token_here
 GITEE_TOKEN=your_gitee_token
 ```
 
+## Acknowledgments
+
+This project is based on and derived from [Amery2010/peinture](https://github.com/Amery2010/peinture). Many thanks to the original author for the foundational implementation.
+
 ## License
 
 MIT
