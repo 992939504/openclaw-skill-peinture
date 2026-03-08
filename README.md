@@ -1,6 +1,6 @@
 # Peinture
 
-🎨 AI image generation skill for **OpenClaw** (大龙虾). Generate images via multiple providers with automatic fallback.
+🎨 AI image generation skill for **OpenClaw**. Generate images via multiple providers with automatic fallback.
 
 ## Features
 
@@ -86,37 +86,37 @@ Generate an image of a sunset over the ocean
 
 ### Hugging Face (Optional)
 
-1. 访问 https://huggingface.co/settings/tokens
-2. 创建 Access Token（Read 权限即可）
-3. 设置环境变量：`HUGGING_FACE_TOKEN=hf_xxx`
+1. Visit https://huggingface.co/settings/tokens
+2. Create an Access Token (Read permission is enough)
+3. Set environment variable: `HUGGING_FACE_TOKEN=hf_xxx`
 
-> Hugging Face 免费用户有公开配额，不设 Token 也能使用，但频率较低。
+> Hugging Face free users have public quota, you can use it without a token, but with lower rate limits.
 
 ### Gitee AI
 
-1. 访问 https://ai.gitee.com/
-2. 登录后进入控制台 → API 密钥
-3. 创建密钥并复制
-4. 设置环境变量：`GITEE_TOKEN=xxx`
+1. Visit https://ai.gitee.com/
+2. Login and go to Console → API Keys
+3. Create a key and copy it
+4. Set environment variable: `GITEE_TOKEN=xxx`
 
 ## Security
 
-- 不要将 Token 硬编码到代码中
-- 不要将 Token 提交到 Git 仓库
-- 使用环境变量存储 Token
-- Docker 部署时通过 `environment` 注入：
+- Never hardcode tokens in your code
+- Never commit tokens to Git repositories
+- Use environment variables to store tokens
+- For Docker deployments, inject via `environment`:
 
 ```yaml
-# docker-compose.yml 示例
+# docker-compose.yml example
 environment:
   - HUGGING_FACE_TOKEN=${HUGGING_FACE_TOKEN}
   - GITEE_TOKEN=${GITEE_TOKEN}
 ```
 
-或使用 `.env` 文件（不要提交到仓库）：
+Or use a `.env` file (do not commit to repository):
 
 ```bash
-# .env 文件
+# .env file
 HUGGING_FACE_TOKEN=hf_your_token_here
 GITEE_TOKEN=your_gitee_token
 ```
